@@ -51,37 +51,36 @@
 }
 
 .central {
-    flex: 2; /* Занимает 2/3 ширины центральной части */
+    flex: 2;
     display: flex;
-    flex-direction: column; /* Выровнять элементы по вертикали */
+    flex-direction: column;
     padding: 0px;
     border: 1.5px solid  #ccc;
 }
 
 .central2 {
-    flex: 0.7; /* Занимает 70% высоты от контейнера "Центральный" */
-    display: flex; /* Позволяет размещать элементы в строку */
+    flex: 0.7;
+    display: flex;
     padding: 0px;
     border: none;
 }
 
 .graph {
-    flex: 1; /* Занимает оставшуюся часть */
+    flex: 1; 
     background-color:$backgroundColorBlockStock;
 }
 
 .right-column {
-    flex: 1; /* Занимает оставшуюся часть справа */
+    flex: 1;
     display: flex;
-    flex-direction: column; /* Выровнять элементы по вертикали */
+    flex-direction: column;
 }
 
 .parameters {
-    flex: 0; /* Установим на ноль, чтобы не занимать место */
-    margin-top: auto; /* Сдвинем вниз */
+    flex: 0;
+    margin-top: auto;
     background-color:$backgroundColorBlockStock;
     flex: 0.3;
-    //border: none;
 }
 
 .right-panel {
@@ -91,12 +90,12 @@
 }
 
 .state {
-    flex: 1; /* Каждому блоку выделяется равное пространство */
+    flex: 1;
     background-color: $backgroundColorBlockStock;
 }
 
 .simulation {
-    flex: 1; /* Каждому блоку выделяется равное пространство */
+    flex: 1;
     background-color: $backgroundColorBlockStock;
 }
 
@@ -108,7 +107,7 @@
 
 [data-title] {
     font-size: 14px; 
-    //font-weight: bold;
+
 }
 
 //стили кнопки в template
