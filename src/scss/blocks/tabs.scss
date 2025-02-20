@@ -1,0 +1,57 @@
+.container_tabs {
+    margin: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    background-color: #fff;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content:target {
+    display: block;
+    background-color: white;
+    margin-top: 0;
+  }
+
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 1rem;
+    order: -1;
+  }
+
+  .tab-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+    background: 0 0;
+    border: 1px solid transparent;
+    margin-bottom: -1px;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    //-webkit-appearance: button;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+
+  #mainContentStock:target~.tab-nav>[href="#mainContentStock"],
+  #mainContentOrderCalculation:target~.tab-nav>[href="#mainContentOrderCalculation"],
+  #mainContentOrderParameters:target~.tab-nav>[href="#mainContentOrderParameters"],
+  #mainContentPromoAz:target~.tab-nav>[href="#mainContentPromoAz"],
+  #mainContentSettingsAz:target~.tab-nav>[href="#mainContentSettingsAz"],
+  #mainContentBI:target~.tab-nav>[href="#mainContentBI"],
+  #content-7:target~.tab-nav>[href="#content-7"] {
+    color: #000;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    cursor: default;
+  }

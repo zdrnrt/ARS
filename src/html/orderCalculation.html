@@ -1,0 +1,53 @@
+<div class="container_orderCalculation__wrapper">
+    <div class="column_orderCalculation parameters_orderCalculation" data-title="Управление параметрами ТЗ">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Управление параметрами отображения
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="param1" name="param1">
+                            <label for="param1">Параметр 1</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="param2" name="param2">
+                            <label for="param2">Параметр 2</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="param3" name="param3">
+                            <label for="param3">Параметр 3</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="param4" name="param4">
+                            <label for="param4">Параметр 4</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+        
+    <div class="container_orderCalculation">
+        <!-- Левая панель -->
+        <div class="left-panel_orderCalculation">
+            <div class="column_orderCalculation product_tree_orderCalculation" data-title="Направление 1"></div>
+            <div class="column_orderCalculation warehouse_orderCalculation" data-title="Группа складов"></div>
+        </div>
+
+        <!-- Центральная часть -->
+        <div class="middle_orderCalculation">
+            <div class="column_orderCalculation central_orderCalculation">
+                <div class="column_orderCalculation graph_orderCalculation" data-title="Таблица"></div>
+            </div>
+        </div>
+
+        <!-- Блок "Планировщик" -->
+        <div class="right-panel_orderCalculation">
+            <div class="column_orderCalculation order_status_orderCalculation" data-title="Статус по заказам"></div>
+        </div>
+    </div>
+</div>
