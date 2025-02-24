@@ -63,7 +63,7 @@
         display: flex;
         flex-direction:row ;
         align-items: center;
-        margin-left: 2%;
+        // margin-left: 2%;
         .header_nav__arsLink{
           margin-left: 40%;
           align-items: center;
@@ -80,7 +80,8 @@
         width: 20%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        column-gap: 7px;
       
       .header_nav__user{
         display: flex;
@@ -99,20 +100,19 @@
   }
 }
 #header_top_user{
+  display: block;
+  padding: 5px;
+  margin: 0px;
   outline: none;
   color: white;
   font-size: 0.7rem;
-  padding: 5px;
   cursor: pointer;
-  //text-align: center;
   background-color: $headerNavTopColor;
   border: none;
-  border-color:$headerNavTopColor;
-  margin: 0px 7px;
+  // border-color:$headerNavTopColor;
   -webkit-appearance: none; 
     -moz-appearance: none; 
     appearance: none;  
-    align-items: end;      
 }
 
   #navimg-user{

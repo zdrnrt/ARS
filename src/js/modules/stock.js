@@ -1,4 +1,4 @@
-export default window.showContent_stock = function() {
+window.showContent_stock = function() {
     fetch('./src/html/stock.html')
         .then(response => {
             if (!response.ok) {
@@ -13,3 +13,4 @@ export default window.showContent_stock = function() {
             console.error('Возникла проблема с операцией выборки: ', error);
         });
 }
+

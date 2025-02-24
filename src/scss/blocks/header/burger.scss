@@ -16,7 +16,8 @@
   }
   #menu__toggle:checked ~ .menu__box {
     margin-top: 60px;
-    left: 270px !important;
+    left: 285px !important;
+    visibility: visible;
   }
   .menu__btn {
     //position: fixed;
@@ -26,7 +27,7 @@
     height: 26px;
     cursor: pointer;
     z-index: 1;
-    display: inline-block; 
+    display: block; 
   }
   .menu__btn > span,
   .menu__btn > span::before,
@@ -47,19 +48,21 @@
     top: 8px;
   }
   .menu__box {
-    display: block;
     position: fixed;
-    top: 0;
+    top: 16px;
     left: -100%;
+    z-index: 999;
+    display: block;
     width: 300px;
-    height: 450px;
+    // height: 450px;
     margin: 0;
-    padding: 80px 0;
+    padding: 20px 0;
     list-style: none;
     background-color:white;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .30s;
+    transition-duration: $transition-time;
     border-radius: 5px;
+    visibility: hidden;
   }
   .menu__item {
     display: block;
@@ -73,6 +76,7 @@
   }
   .menu__item:hover {
     background-color: #CFD8DC;
+    text-decoration: none;
   }
   .hamburger-menu{
     margin-left: 20px;

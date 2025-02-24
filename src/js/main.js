@@ -1,49 +1,26 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from "jquery";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../scss/style.scss';
+
 // import 'bootstrap';
 
 //import showContent_action from "./modules/action.js";
 //import showContent_assortmentStructure from "./modules/assortmentStructure.js";
 
+// blocks
+import './blocks/header.js';
 
-import showContent_stock from "./modules/stock.js";
+// module
+import "./modules/stock.js";
 import showContent_orderCalculation from "./modules/orderCalculation.js";
 import showContent_orderParameters from "./modules/orderParameters.js";
 import showContent_promoAz from "./modules/promoAz.js";
 import showContent_settingsAz from "./modules/settingsAz.js";
 import showContent_BI from "./modules/biBlock.js";
 
-import imageZE from '/images/users/ZilevichElizaveta.jpg';
-import imageTO from '/images/users/TkachevOleg.jpg';
-import imageTG from '/images/users/TolokGalina.jpg';
-import imageNP from '/images/users/question.jpg';
-import imageU1 from '/images/users/user1.png';
 
 /*вставка юзера ПЕРЕНЕСЬТИ*/
-window.updateUserImage = function() {
-  const userSelect = document.getElementById('header_top_user');
-  const userImageDiv = document.getElementById('userImage');
-  const images = {
-      option1: imageNP, 
-      option2: imageZE , 
-      option3: imageU1, 
-      option4: imageTO , 
-      option5: imageU1, 
-      option6: imageTG,
-      option7: imageU1 
-  };
-  const selectedValue = userSelect.value;
-  // Очищаем предыдущий контент
-  userImageDiv.innerHTML = '';
-  if (selectedValue && images[selectedValue]) {
-      const img = document.createElement('img');
-      img.src = images[selectedValue];
-      img.alt = selectedValue;
-      img.style.width = '40px';
-      img.style.borderRadius = '50px';
-      userImageDiv.appendChild(img);
-      img.style.border= `2px #4757de solid`;
-  }
-}
+
 /*вставка юзера*/
 
 //  window.showContent_stock = function() {
@@ -64,7 +41,7 @@ window.updateUserImage = function() {
 
 
 ///модальное окно стока
-    window.addParametsStock = function() {
+  window.addParametsStock = function() {
       document.getElementById('modalStock').style.display = 'block';
   }
 
