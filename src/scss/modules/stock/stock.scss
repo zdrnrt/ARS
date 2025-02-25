@@ -118,8 +118,11 @@ height: 30px;
 width: 100px;
 }
 
-.settings-content{}
-.setting-item{
+.parameters-content{
+    max-height: 150px;
+    overflow: scroll;
+}
+.parameter-item{
     & + &{
         margin-top: 5px;
         padding-top: 5px;

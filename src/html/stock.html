@@ -20,8 +20,8 @@
                 </div>
                 <div class="column parameters" data-title="Управление параметрами ТЗ">
                     <button class="buttonParametsStock styled-button" id="addParametsStock"
-                        onclick="stockModalSettingsOpen()">Добавить</button>
-                    <div id="settings-content"></div>
+                        onclick="stockModalParametersOpen()">Добавить</button>
+                    <div id="parameters-content" class="parameters-content"></div>
                 </div>
             </div>
         </div>
@@ -36,17 +36,17 @@
 <!-- data-title="Центральный" -->
 
 <!-- Модальное окно -->
-<div id="modalStockSetting" class="modal">
+<div id="modalStockParameters" class="modal">
     <div class="modal-content">
-        <span class="close" id="closeModal" onclick="stockModalSettingsClose()">&times;</span>
-        <form class="form" onsubmit="stockSettingSubmit(event);">
+        <span class="close" id="closeModal" onclick="stockModalParameterssClose()">&times;</span>
+        <form class="form" onsubmit="stockParametersSubmit(event);">
             <h3>Параметры заказа</h3>
             <h4>Параметры округления</h4>
             <div class="form-group">
                 <div class="row justify-content-between align-items-center">
                     <label class="col-5" for="roundBox">Округление до короба</label>
                     <div class="col-7">
-                        <select id="roundBox" class="form-select" name="roundBox" onchange="stockSettingValue(this);">
+                        <select id="roundBox" class="form-select" name="roundBox" onchange="stockParametersValue(this);">
                             <option value="">Не использовать</option>
                             <option value="down">Всегда вниз</option>
                             <option value="up">Всегда вверх</option>
@@ -74,7 +74,7 @@
                 <div class="row justify-content-between align-items-center">
                     <label class="col-5" for="roundMoq">Округление до MOQ</label>
                     <div class="col-7">
-                        <select id="roundMoq" name="roundMoq" class="form-select" onchange="stockSettingValue(this);">
+                        <select id="roundMoq" name="roundMoq" class="form-select" onchange="stockParametersValue(this);">
                             <option value="">Не использовать</option>
                             <option value="down" selected>Всегда вниз</option>
                             <option value="up">Всегда вверх</option>
@@ -192,10 +192,10 @@
                 <div class="row justify-content-between align-items-center">
                     <label class="col-12" for="cutOsgSz">Отсечка по ОСГ СЗ</label>
                     <div class="col-12 d-flex align-items-center gap-4">
-                        <label><input type="radio" name="cutOsgSz" value="no" onchange="stockSettingValue(this);">Не
+                        <label><input type="radio" name="cutOsgSz" value="no" onchange="stockParametersValue(this);">Не
                             использовать</label>
                         <label><input type="radio" name="cutOsgSz" value="value" checked
-                                onchange="stockSettingValue(this);">Задать значение порога</label>
+                                onchange="stockParametersValue(this);">Задать значение порога</label>
                     </div>
                 </div>
                 <input class="form-group__value" name="cutOsgSzValue" type="text" placeholder="Значение порога"
@@ -205,10 +205,10 @@
                 <div class="row justify-content-between align-items-center">
                     <label class="col-12" for="cutTurnSz">Отсечка по оборачиваемости СЗ</label>
                     <div class="col-12 d-flex align-items-center gap-4">
-                        <label><input type="radio" name="cutTurnSz" value="no" onchange="stockSettingValue(this);">Не
+                        <label><input type="radio" name="cutTurnSz" value="no" onchange="stockParametersValue(this);">Не
                             использовать</label>
                         <label><input type="radio" name="cutTurnSz" checked value="value"
-                                onchange="stockSettingValue(this);">
+                                onchange="stockParametersValue(this);">
                             Задать значение порога</label>
                     </div>
                 </div>

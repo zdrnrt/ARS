@@ -18,24 +18,24 @@ window.showContent_stock = function() {
 }
 
 ///модальное окно стока
-window.stockModalSettingsOpen = function() {
-    document.getElementById('modalStockSetting').style.display = 'block';
-    document.addEventListener('click', stockModalSettingsListener)
+window.stockModalParametersOpen = function() {
+    document.getElementById('modalStockParameters').style.display = 'block';
+    document.addEventListener('click', stockModalParametersListener)
 }
 
-window.stockModalSettingsClose = function() {
-    document.getElementById('modalStockSetting').style.display = 'none';
-    document.removeEventListener('click', stockModalSettingsListener)
+window.stockModalParametersClose = function() {
+    document.getElementById('modalStockParameters').style.display = 'none';
+    document.removeEventListener('click', stockModalParametersListener)
 }
 
-window.stockModalSettingsListener = function(event) {
-    if (event.target == document.getElementById('modalStockSetting')) {
-        stockModalSettingsClose();
+window.stockModalParametersListener = function(event) {
+    if (event.target == document.getElementById('modalStockParameters')) {
+        stockModalParametersClose();
     }
 }
 
 /// включение ввода своих значений
-window.stockSettingValue = function(input) {
+window.stockParametersValue = function(input) {
     const inputValue = input.closest('.form-group').querySelector(`[name=${input.name}Value]`);
     if (inputValue){
         if (input.value == 'value'){
@@ -47,7 +47,7 @@ window.stockSettingValue = function(input) {
 }
 
 /// сохранение настроек
-window.stockSettingSubmit = function(event){
+window.stockParametersSubmit = function(event){
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
@@ -62,17 +62,17 @@ window.stockSettingSubmit = function(event){
             result[name] = value
         }
     }
-    stockSettingDraw(result);
+    stockparameterDraw(result);
     form.reset();
-    stockModalSettingsClose();
+    stockModalParametersClose();
 }
 
-window.stockSettingDraw = function (request){
+window.stockparameterDraw = function (request){
     // console.log(re)
-    const content = document.getElementById('settings-content');
-    let template = `<div class="setting-item" data-settings='${JSON.stringify(request)}'>`;
+    const content = document.getElementById('parameters-content');
+    let template = `<div class="parameter-item" data-parameters='${JSON.stringify(request)}'>`;
     for (const key in request){
-        template += `<div class="setting-item__item">${document.querySelector(`label[for=${key}]`).textContent}: ${request[key]}</div>`
+        template += `<div class="parameter-item__item">${document.querySelector(`label[for=${key}]`).textContent}: ${request[key]}</div>`
     }
     template += '</div>';
     content.insertAdjacentHTML('beforeend', template);
