@@ -1,13 +1,14 @@
 
 //автоЗАКАЗ
 
-@import "bootstrap/scss/bootstrap";
+// @import "bootstrap/scss/bootstrap";
 @import "./vars.scss";
 @import "./template.scss";
 
 @import "./blocks/tabs.scss";
 @import "./blocks/header/header.scss";
 @import "./blocks/header/burger.scss";
+@import "./blocks/form.scss";
 @import "./blocks/stock/stock.scss";
 @import "./blocks/stock/modalStock.scss";
 @import "./blocks/orderCalculation.scss";

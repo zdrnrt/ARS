@@ -40,20 +40,7 @@ import showContent_BI from "./modules/biBlock.js";
 // }
 
 
-///модальное окно стока
-  window.addParametsStock = function() {
-      document.getElementById('modalStock').style.display = 'block';
-  }
 
-  window.closeModalStock = function() {
-      document.getElementById('modalStock').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-      if (event.target == document.getElementById('modalStock')) {
-          document.getElementById('modalStock').style.display = 'none';
-      }
-  }
   //Обработка загрузки страницы
 //   document.addEventListener('DOMContentLoaded', function() {
 //       // Дополнительные настройки
