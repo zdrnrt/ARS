@@ -18,7 +18,7 @@
 }
 
 .column {
-    border: 1.5px solid #ccc;
+    border: 1.5px solid $border-color;
     border-radius: 10px;
     margin: 5px;
     padding: 5px;
@@ -55,7 +55,7 @@
     display: flex;
     flex-direction: column; /* Выровнять элементы по вертикали */
     padding: 0px;
-    border: 1.5px solid  #ccc;
+    border: 1.5px solid  $border-color;
 }
 
 .central2 {
@@ -118,7 +118,17 @@ height: 30px;
 width: 100px;
 }
 
-#settings-content{}
+.settings-content{}
 .setting-item{
-    
+    & + &{
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid $border-color;
+    }
+}
+
+.warehouse-content{
+    max-height: 300px;
+    padding-top: 30px;
+    overflow: scroll;
 }

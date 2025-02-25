@@ -72,7 +72,7 @@
     display: flex;
     flex-direction: column;
     padding: 0px;
-    border: 1.5px solid #ccc;
+    border: 1.5px solid $border-color;
     flex-grow: 1;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .column_orderCalculation {
-    border: 1.5px solid #ccc;
+    border: 1.5px solid $border-color;
     border-radius: 10px;
     margin: 5px;
     padding: 5px;

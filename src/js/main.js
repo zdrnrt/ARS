@@ -1,4 +1,5 @@
-import $ from "jquery";
+import "jquery";
+import Papa from 'papaparse';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../scss/style.scss';
 
@@ -18,6 +19,48 @@ import showContent_promoAz from "./modules/promoAz.js";
 import showContent_settingsAz from "./modules/settingsAz.js";
 import showContent_BI from "./modules/biBlock.js";
 
+// Papa.parse("./data/data_items_24_02.csv", {
+Papa.parse("./data/data_stores_24_02.csv", {
+	download: true,
+  header: true,
+  // dynamicTyping: true,
+  skipEmptyLines: true,
+  // transform: (el) => console.log(el),
+	complete: function(results) {
+    console.log(results);
+    window.WAREHOUSE = results.data.map((el, i) => ({id: i, title: el['Наименование склада']}));
+    console.log(WAREHOUSE);
+    // window.TESTDATA = []; 
+    // for (let i = 0; i < 100; i++){
+    //   TESTDATA.push(DATA[i])
+    // }
+		// console.log(results);
+	}
+});
+
+window.configureData = function(data){
+  const keys = Object.keys(data[0]);
+  let l2 = {};
+  data.forEach((el) => {
+    const values = Object.values(el);
+    if (values[0] in l2){
+      l2[values[0]].push()
+    }
+  })
+
+}
+
+/**
+{
+    "SPR nom.Уровень2": "05 Продовольственные товары",
+    "SPR nom.Уровень3": "0508 Смеси для выпечки и десертов",
+    "SPR nom.Уровень4": "050802 Сухие компоненты",
+    "SPR nom.Уровень5": "05080203 Ванильный сахар, ванилин",
+    "SPR nom.Номенклатура": "Сахар ванильный Цикория 32г",
+    "Код ном": 756,
+    "": null
+}
+ */
 
 /*вставка юзера ПЕРЕНЕСЬТИ*/
 

@@ -8,6 +8,9 @@ window.showContent_stock = function() {
         })
         .then(html => {
             document.getElementById('mainContentStock').innerHTML = html;
+
+            stockWarehouseDraw()
+
         })
         .catch(error => {
             console.error('Возникла проблема с операцией выборки: ', error);
@@ -73,4 +76,19 @@ window.stockSettingDraw = function (request){
     }
     template += '</div>';
     content.insertAdjacentHTML('beforeend', template);
+}
+
+// отрисовка списка складов
+
+window.stockWarehouseDraw = function(){
+    let template = '<div>'
+    if (WAREHOUSE){
+        WAREHOUSE.forEach(el => {
+            template += `<div><label><input type="checkbox" name="warehouse" value="${el.id}">${el.title}</label></div>`
+        });
+    } else {
+        template += 'Ничего не найдено'
+    }
+    template += '</div>'
+    document.getElementById('warehouse-content').insertAdjacentHTML('beforeend', template);
 }
