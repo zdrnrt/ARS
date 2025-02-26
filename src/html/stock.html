@@ -1,0 +1,225 @@
+<div class="container_stock__wrapper">
+    <div class="container_stock">
+        <!-- Левая панель -->
+        <div class="_left-panel col-2 h-100 d-flex flex-column">
+            <div class="column  product_tree" data-title="Направление 1">
+                <div id="products-content" class="products-content"></div>
+            </div>
+            <div class="column warehouse" data-title="Группа складов">
+                <div id="warehouse-content" class="warehouse-content"></div>
+            </div>
+        </div>
+
+        <!-- Центральная часть -->
+        <div class="_middle col-8 h-100">
+            <div class="column central h-100">
+                <div class="column central2">
+                    <div class="column graph" data-title="Название графика"></div>
+                    <div class="right-column">
+                        <div class="column state" data-title="Текущее состояние"></div>
+                        <div class="column simulation" data-title="Моделирование"></div>
+                    </div>
+                </div>
+                <div class="column parameters" data-title="Управление параметрами ТЗ">
+                    <button class="buttonParametsStock styled-button" id="addParametsStock"
+                        onclick="stockModalParametersOpen()">Добавить</button>
+                    <div id="parameters-content" class="parameters-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок "Планировщик" -->
+        <div class="_right-panel col-2 h-100">
+            <div class="column planner" data-title="Планировщик задач"></div>
+        </div>
+    </div>
+</div>
+
+<!-- data-title="Центральный" -->
+
+<!-- Модальное окно -->
+<div id="modalStockParameters" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal" onclick="stockModalParameterssClose()">&times;</span>
+        <form class="form" onsubmit="stockParametersSubmit(event);">
+            <h3>Параметры заказа</h3>
+            <h4>Параметры округления</h4>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-5" for="roundBox">Округление до короба</label>
+                    <div class="col-7">
+                        <select id="roundBox" class="form-select" name="roundBox" onchange="stockParametersValue(this);">
+                            <option value="">Не использовать</option>
+                            <option value="down">Всегда вниз</option>
+                            <option value="up">Всегда вверх</option>
+                            <option value="math">Математическое</option>
+                            <option value="value" selected>Задать значение порога</option>
+                        </select>
+                    </div>
+                </div>
+                <input class="form-group__value" name="roundBoxValue" type="text" placeholder="Значение порога"
+                    required>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-5" for="moq">Минимальный объем заказа (MOQ)</label>
+                    <div class="col-7">
+                        <select id="moq" name="moq" class="form-select">
+                            <option value="box">В коробах</option>
+                            <option value="cubem" selected>В куб м</option>
+                            <option value="sum">Сумма</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-5" for="roundMoq">Округление до MOQ</label>
+                    <div class="col-7">
+                        <select id="roundMoq" name="roundMoq" class="form-select" onchange="stockParametersValue(this);">
+                            <option value="">Не использовать</option>
+                            <option value="down" selected>Всегда вниз</option>
+                            <option value="up">Всегда вверх</option>
+                            <option value="math">Математическое</option>
+                            <option value="value">Задать значение порога</option>
+                        </select>
+                    </div>
+                </div>
+                <input class="form-group__value" name="roundMoqValue" type="text" placeholder="Значение порога" required
+                    disabled>
+            </div>
+            <h4>Страховой запас</h4>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="presentStockpileSz">Учитывать Презентационный запас в СЗ</label>
+                    <div class="col-5 d-flex align-items-center gap-2">
+                        <label><input type="radio" name="presentStockpileSz" value="yes" checked> Да</label>
+                        <label><input type="radio" name="presentStockpileSz" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-12" for="presentStockpileSz">Учитывать Презентационный запас в СЗ</label>
+                    <div class="col-12 d-flex align-items-center gap-2">
+                        <label><input type="radio" name="presentStockpileSz" value="yes" checked> Да</label>
+                        <label><input type="radio" name="presentStockpileSz" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="presentStockpileSz">Учитывать Презентационный запас в СЗ</label>
+                    <div class="col-5">
+                        <select id="presentStockpileSz">
+                            <option value="yes" selected>Да</option>
+                            <option value="no">Нет</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemDis">Расчет страхового запаса по товару от дискретности
+                        поставок</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemDis" value="yes" checked> Да</label>
+                        <label><input type="radio" name="insuranceItemDis" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemLog">Расчет страхового запаса по товару от лог плеча</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemLog" value="yes" checked> Да</label>
+                        <label><input type="radio" name="insuranceItemLog" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemExpire">Расчет страхового запаса по товару от срока
+                        годности</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemExpire" value="yes" checked>Да</label>
+                        <label><input type="radio" name="insuranceItemExpire" value="no">Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemVolat">Расчет страхового запаса по товару от волатильности
+                        продаж</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemVolat" value="yes" checked> Да</label>
+                        <label><input type="radio" name="insuranceItemVolat" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemUs">Расчет страхового запаса по товару от входящего УС
+                        поставщика</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemUs" value="yes" checked> Да</label>
+                        <label><input type="radio" name="insuranceItemUs" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-7" for="insuranceItemPlan">Расчет страхового запаса по товару от
+                        планограммы</label>
+                    <div class="col-5 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemPlan" value="yes" checked> Да</label>
+                        <label><input type="radio" name="insuranceItemPlan" value="no"> Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-12" for="insuranceItemNedo">Расчет страхового запаса по товару от
+                        недопрогноза</label>
+                    <div class="col-12 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="insuranceItemNedo" value="yes" checked>Да</label>
+                        <label><input type="radio" name="insuranceItemNedo" value="no">Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-12" for="cutOsgSz">Отсечка по ОСГ СЗ</label>
+                    <div class="col-12 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="cutOsgSz" value="no" onchange="stockParametersValue(this);">Не
+                            использовать</label>
+                        <label><input type="radio" name="cutOsgSz" value="value" checked
+                                onchange="stockParametersValue(this);">Задать значение порога</label>
+                    </div>
+                </div>
+                <input class="form-group__value" name="cutOsgSzValue" type="text" placeholder="Значение порога"
+                    required>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between align-items-center">
+                    <label class="col-12" for="cutTurnSz">Отсечка по оборачиваемости СЗ</label>
+                    <div class="col-12 d-flex align-items-center gap-4">
+                        <label><input type="radio" name="cutTurnSz" value="no" onchange="stockParametersValue(this);">Не
+                            использовать</label>
+                        <label><input type="radio" name="cutTurnSz" checked value="value"
+                                onchange="stockParametersValue(this);">
+                            Задать значение порога</label>
+                    </div>
+                </div>
+                <input class="form-group__value" name="cutTurnSzValue" type="text" required
+                    placeholder="Значение порога">
+            </div>
+            <button class="buttonSaveParamsModalStock styled-button form__submit" id="saveParams"
+                type="submit">Сохранить</button>
+        </form>
+    </div>
+
+</div>

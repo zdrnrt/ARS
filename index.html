@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.scss">
+  <link rel="icon" href="/ARS/assets/logo_sputnik-ap09z9HG.png" type="image/png">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+  <title>SputnikPro_ARS</title>
+  <script type="module" crossorigin src="/ARS/assets/index-BCTz_gKM.js"></script>
+  <link rel="stylesheet" crossorigin href="/ARS/assets/index-BigILhr9.css">
+</head>
+
+<body>
+  <div class="container-outer">
+    <div class="container-inner">
+
+      <header class="header_wrapper">
+
+        <div class="header_logo__wrapper">
+          <div class="header_logo">
+            <div><img id="header_logo__img" src="/ARS/assets/logo_sputnik3-l8yF8zDY.jpg" alt="логотип компании Спутник"></div>
+            <div class="header_logo__text">SputnikPro</div>
+          </div>
+        </div>
+
+        <nav class="header_nav">
+          <div class="header_navtop">
+            <div class="header_nav__burgerAndAr">
+
+              <div class="header_nav__burger">
+                <div class="hamburger-menu">
+                  <input id="menu__toggle" type="checkbox" />
+                  <label class="menu__btn" for="menu__toggle">
+                    <span id="line_bg"></span>
+                  </label>
+                  <ul class="menu__box">
+                    <li><a class="menu__item" href="https://kujavia.github.io/SputnikPro_test_2_2/">Прогнозирование</a>
+                    </li>
+                    <li><a class="menu__item" href="#">Цифровой директор</a></li>
+                    <li><a class="menu__item" href="#">Управление продажами</a></li>
+                    <li><a class="menu__item" href="#">Центр Управления Процессами</a></li>
+                    <li><a class="menu__item" href="#">Ассортимент</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="header_nav__arsLink"><a href="./index.html"></a>Автозаказ</div>
+            </div>
+
+            <div class="header_nav__topleft">
+              <div class="header_nav__envelope"><i class="fa fa-envelope"></i></div>
+              <div class="header_nav__sms"><i class="fa fa-bell"></i></div>
+
+              <div class="header_nav__user">
+                <div class="header_nav__userselect">
+                  <select id="header_top_user" onchange="updateUserImage(this);">
+                    <!-- <option value="option0">Выберите пользователя</option> -->
+                    <option value="option1">Новый пользователь</option>
+                    <option value="option2">Зилевич Елизавета</option>
+                    <option value="option3">Исаханова Малика</option>
+                    <option value="option4">Ткачёв Олег</option>
+                    <option value="option6">Толок Галина</option>
+                    <option value="option5">Шварёв Данила</option>
+                  </select>
+                </div>
+                <div class="header_nav__userfoto">
+                  <div class="header_top__nav-item" id="userImage">
+                    <img id="navimg-user" src="/ARS/assets/question2-RkNsbl6M.jpg" alt="вопрос">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header_navfooter"></div>
+        </nav>
+      </header>
+
+
+      <div class="container_tabs">
+        <div class="tab">
+          <div class="tab-content" id="mainContentStock">
+            ...
+          </div>
+          <div class="tab-content" id="mainContentOrderCalculation">
+            ...
+          </div>
+          <div class="tab-content" id="mainContentOrderParameters">
+            ...
+          </div>
+          <div class="tab-content" id="mainContentPromoAz">
+            ...
+          </div>
+          <div class="tab-content" id="mainContentSettingsAz">
+            ...
+          </div>
+          <div class="tab-content" id="mainContentBI">
+            ...
+          </div>
+          <div class="tab-content" id="content-7">
+            ...
+          </div>
+          <div class="tab-nav">
+            <a class="tab-link" href="#mainContentStock" onclick="showContent_stock()">Сток</a>
+            <a class="tab-link" href="#mainContentOrderCalculation" onclick="showContent_orderCalculation()">Расчёт
+              заказа</a>
+            <a class="tab-link" href="#mainContentOrderParameters" onclick="showContent_orderParameters()">Параметры
+              заказов</a>
+            <a class="tab-link" href="#mainContentPromoAz" onclick="showContent_promoAz()">Промо</a>
+            <a class="tab-link" href="#mainContentSettingsAz" onclick="showContent_settingsAz()">Настройки</a>
+            <a class="tab-link" href="#mainContentBI" onclick="showContent_BI()">BI</a>
+            <a class="tab-link" href="#content-7" onclick="showContent_before()">...</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <main class="main">
+  <div class="content_main" id="_mainContent">
+      Пожалуйста, выберите необходимый пункт в панели навигации
+  </div>
+</main> -->
+
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+</body>
+
+</html>
