@@ -9,7 +9,8 @@ window.showContent_stock = function() {
         .then(html => {
             document.getElementById('mainContentStock').innerHTML = html;
 
-            stockWarehouseDraw()
+            stockWarehouseDraw();
+            stockProducstDraw();
 
         })
         .catch(error => {
@@ -91,4 +92,36 @@ window.stockWarehouseDraw = function(){
     }
     template += '</div>'
     document.getElementById('warehouse-content').insertAdjacentHTML('beforeend', template);
+}
+
+window.stockProducstDraw = function(){
+    let template = '<div>'
+
+    if (PRODUCTS){
+        for (const l2 in PRODUCTS){
+            template += `<div><label><input type="checkbox"> ${l2}</label>`
+            for (const l3 in PRODUCTS[l2]){
+                template += `<div><label><input type="checkbox"> ${l3}</label>`
+                for (const l4 in PRODUCTS[l2][l3]){
+                    template += `<div><label><input type="checkbox"> ${l4}</label>`
+                    for (const l5 in PRODUCTS[l2][l3][l4]){
+                        for (const product of PRODUCTS[l2][l3][l4][l5]){
+                            // for (const v of Object.values(product)){
+                                const item = Object.values(product)
+                                template += `<label><input type="checkbox"> ${item[0]} - ${item[1]}</label>`
+                            // }
+                        }
+                    }
+                    template += '</div>'
+                }
+                template += '</div>'
+            }
+            template += '</div>'
+        }
+    } else {
+        template += 'Ничего не найдено'
+    }
+    template += '</div>'
+    document.getElementById('products-content').insertAdjacentHTML('beforeend', template);
+
 }

@@ -113,9 +113,9 @@
 
 //стили кнопки в template
 .buttonParametsStock{
-margin-left: 30%;
-height: 30px;
-width: 100px;
+    margin-left: 30%;
+    height: 30px;
+    width: 100px;
 }
 
 .parameters-content{
@@ -130,8 +130,15 @@ width: 100px;
     }
 }
 
+
+.products-content,
 .warehouse-content{
-    max-height: 300px;
     padding-top: 30px;
     overflow: scroll;
+}
+.products-content{
+    max-height: 255px;
+}
+.warehouse-content{
+    max-height: 300px;
 }

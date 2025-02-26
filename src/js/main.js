@@ -19,22 +19,46 @@ import showContent_promoAz from "./modules/promoAz.js";
 import showContent_settingsAz from "./modules/settingsAz.js";
 import showContent_BI from "./modules/biBlock.js";
 
-// Papa.parse("./data/data_items_24_02.csv", {
+Papa.parse("./data/data_items_24_02.csv", {
+  download: true,
+  header: true,
+  complete: function(results){
+    // console.log(results.data) // данные
+    // console.log(results.data[0]) // данные
+    // console.log(results.meta.fields) // ключи значений
+    const [l2, l3, l4, l5, nom, code] = results.meta.fields;
+    window.PRODUCTS = {};
+    results.data.forEach( (el) => {
+      if (!(el[l2] in PRODUCTS) && el[l2] != '' ){
+        PRODUCTS[el[l2]] = {}
+      }
+      if ( PRODUCTS[el[l2]] !== undefined && el[l3] !== undefined && !(el[l3] in PRODUCTS[el[l2]]) ){
+        PRODUCTS[el[l2]][el[l3]] = {}
+      }
+      if ( el[l4] !== undefined && !(el[l4] in PRODUCTS[el[l2]][el[l3]]) ){
+        PRODUCTS[el[l2]][el[l3]][el[l4]] = {}
+      }
+      if ( el[l5] !== undefined && !(el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]) ){
+        PRODUCTS[el[l2]][el[l3]][el[l4]][[el[l5]]] = []
+      } else if (el[l5] !== undefined && el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]){
+        const item = {};
+        item[nom] = el[nom];
+        item[code] = el[code];
+        PRODUCTS[el[l2]][el[l3]][el[l4]][[el[l5]]].push(item)
+      }
+    })
+    console.log(PRODUCTS)
+  }
+})
+
 Papa.parse("./data/data_stores_24_02.csv", {
 	download: true,
   header: true,
-  // dynamicTyping: true,
   skipEmptyLines: true,
-  // transform: (el) => console.log(el),
 	complete: function(results) {
-    console.log(results);
+    // console.log(results);
     window.WAREHOUSE = results.data.map((el, i) => ({id: i, title: el['Наименование склада']}));
-    console.log(WAREHOUSE);
-    // window.TESTDATA = []; 
-    // for (let i = 0; i < 100; i++){
-    //   TESTDATA.push(DATA[i])
-    // }
-		// console.log(results);
+    // console.log(WAREHOUSE);
 	}
 });
 
