@@ -1,3 +1,4 @@
+
 window.stockOpen = function() {
     fetch('./src/html/stock.html')
         .then(response => {
@@ -20,22 +21,6 @@ window.stockOpen = function() {
         });
 }
 
-///модальное окно стока
-window.stockModalParametersOpen = function() {
-    document.getElementById('modalStockParameters').style.display = 'block';
-    document.addEventListener('click', stockModalParametersListener)
-}
-
-window.stockModalParametersClose = function() {
-    document.getElementById('modalStockParameters').style.display = 'none';
-    document.removeEventListener('click', stockModalParametersListener)
-}
-
-window.stockModalParametersListener = function(event) {
-    if (event.target == document.getElementById('modalStockParameters')) {
-        stockModalParametersClose();
-    }
-}
 
 /// включение ввода своих значений
 window.stockParametersValue = function(input) {
@@ -53,6 +38,8 @@ window.stockParametersValue = function(input) {
 window.stockParametersSubmit = function(event){
     event.preventDefault();
     const form = event.target;
+    // const modal = new Modal(form.closest('.modal'), {});
+    // console.log(modal);
     const formData = new FormData(form);
     let result = {};
     for (const [name, value] of formData){
@@ -67,7 +54,9 @@ window.stockParametersSubmit = function(event){
     }
     stockparameterDraw(result);
     form.reset();
-    stockModalParametersClose();
+
+    // modal.hide();
+    // stockModalParametersClose();
 }
 
 window.stockparameterDraw = function (request){
@@ -87,7 +76,7 @@ window.stockWarehouseDraw = function(){
     let template = '<div>'
     if (WAREHOUSE){
         WAREHOUSE.forEach(el => {
-            template += `<div><label><input type="checkbox" name="warehouse" value="${el.id}">${el.title}</label></div>`
+            template += `<div><label class="form-check-label"><input class="form-check-input" type="checkbox" name="warehouse" value="${el.id}"> ${el.title}</label></div>`
         });
     } else {
         template += 'Ничего не найдено'

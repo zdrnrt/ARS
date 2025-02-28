@@ -1,9 +1,9 @@
-import "jquery";
+import $ from "jquery";
 import Papa from 'papaparse';
+import 'bootstrap/js/index.esm.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../scss/style.scss'
+import '../scss/style.scss';
+
 // import 'bootstrap';
 
 //import showContent_action from "./modules/action.js";

@@ -1,14 +1,60 @@
+<div id="stock" class="row h-100">
+    <div class="col-10 border">
+        <div class="row">
+            <div class="col-3 border">
+                <div class="stock__products column mb-2">
+                    <header class="column__header">Направление 1 </header>
+                    <div id="products-content" class="column-content column-content--products">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 border">
+                <div class="column">
+                    <div class="column-content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 border">
+                <div class="column">
+                    <header class="column__header">Группа складов 1</header>
+                    <div id="warehouse-content" class="column-content"></div>
+                </div>
+            </div>
+            <div class="col-9 border">
+                <div class="column">
+                    <header class="column__header">
+                        Управление параметрами ТЗ
+                        <button class="btn btn-primary" id="addParametsStock" data-bs-toggle="modal" data-bs-target="#modalTimetable">Добавить</button>
+                    </header>
+                    <div id="parameters-content" class="parameters-content column-content"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-2 h-100 border">
+        <div class="planner">
+            Планировщик задач
+            <div id="planner-content"></div>
+        </div>
+    </div>
+    
+</div>
 <div class="container_stock__wrapper">
     <div class="container_stock">
+
         <!-- Левая панель -->
-        <div class="_left-panel d-none col-2 h-100 d-flex flex-column">
+        <!-- <div class="_left-panel d-none col-2 h-100 d-flex flex-column">
             <div class="column  product_tree" data-title="Направление 1">
                 <div id="products-content" class="products-content"></div>
             </div>
             <div class="column warehouse" data-title="Группа складов">
                 <div id="warehouse-content" class="warehouse-content"></div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Центральная часть -->
         <div class="_middle col-8 h-100">
@@ -21,8 +67,6 @@
                     </div>
                 </div>
                 <div class="column parameters" data-title="Управление параметрами ТЗ">
-                    <button class="buttonParametsStock styled-button" id="addParametsStock" data-bs-toggle="modal"
-                        data-bs-target="#modalTimetable">Добавить</button>
                     <div id="parameters-content" class="parameters-content"></div>
                 </div>
             </div>
