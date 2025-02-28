@@ -1,4 +1,4 @@
-window.showContent_stock = function() {
+window.stockOpen = function() {
     fetch('./src/html/stock.html')
         .then(response => {
             if (!response.ok) {
@@ -7,7 +7,9 @@ window.showContent_stock = function() {
             return response.text(); 
         })
         .then(html => {
-            document.getElementById('mainContentStock').innerHTML = html;
+            document.getElementById('content').innerHTML = html;
+
+            // document.getElementById('mainContentStock').innerHTML = html;
 
             stockWarehouseDraw();
             stockProducstDraw();

@@ -1,5 +1,4 @@
 export default window.showContent_BI = function() {
-
     fetch('./src/html/biBlock.html')
         .then(response => {
             if (!response.ok) {

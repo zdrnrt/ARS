@@ -1,15 +1,16 @@
 import "jquery";
 import Papa from 'papaparse';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../scss/style.scss';
-
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../scss/style.scss'
 // import 'bootstrap';
 
 //import showContent_action from "./modules/action.js";
 //import showContent_assortmentStructure from "./modules/assortmentStructure.js";
 
 // blocks
-import './blocks/header.js';
+import './blocks/aside.js';
 
 // module
 import "./modules/stock.js";

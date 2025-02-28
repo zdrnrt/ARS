@@ -1,3 +1,26 @@
+// стили из figma
+$main-font: 'Inter', sans-serif;
+
+$cl-main: #000;
+$cl-additon: #27262B;
+$cl-purple: #474BAB;
+$cl-purple-light: #CACCF7;
+$cl-grey-super-light: #FAFAFA;
+$cl-grey-purple: #F1F2FF;
+$cl-grey-light: #E9E9E9;
+$cl-grey: #EAEAF0;
+$cl-border: #EBEBEB;
+$cl-table-border: #E7E9EC;
+
+$border-radius-table: 0.4rem;
+
+$transition-time: 0.2s;
+
+:root{
+  --bs-border-radius: 0.8rem;
+  --bs-border-color: #EAEAF0;
+}
+
 //здесь переменные
 // $main-font: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 //$main-font: 'Roboto', sans-serif;

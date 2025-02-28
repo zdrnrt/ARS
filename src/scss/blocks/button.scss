@@ -1,0 +1,32 @@
+:root{
+  --bs-btn-padding-x: 1.2rem;
+  --bs-btn-padding-y: 0.6rem;
+  --bs-btn-line-height: 1.6;
+  --bs-btn-active-bg: $cl-purple-light;
+  --bs-btn-active-border-color: $cl-purple-light;
+}
+.btn{
+  --bs-btn-font-size: 1.5rem;
+
+  &:hover{
+    background-color: $cl-purple;
+    border-color: $cl-purple;
+  }
+  &:active{
+    background-color: $cl-purple-light!important;
+    border-color: $cl-purple-light!important;
+    color: $cl-additon!important;
+  }
+}
+.btn-primary{
+  background-color: rgba($cl-purple, 0.9);
+  border-color: rgba($cl-purple, 0.9);
+}
+.btn-outline-primary{
+  border-color: $cl-purple;
+  color: $cl-main;
+}
+.btn-outline-secondary{
+  border-color: $cl-purple-light;
+  color: $cl-main;
+}

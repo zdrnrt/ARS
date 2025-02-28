@@ -1,12 +1,17 @@
  // базовый сброс настроек
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline-color: $cl-purple;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+}
+h1{
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 ul, ol,li {
@@ -21,8 +26,7 @@ a {
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+    min-width: 100%;
 }
 
 img {
@@ -30,9 +34,42 @@ img {
     height: auto;
 }
 
+button{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+ // базовый сброс настроекКОНЕЦ
+ 
+:root{
+    font-size: 10px;
+    line-height: 1.2;
+}
+body {
+    font-family: $main-font;
+    font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page{
+    height: 100vh;
+}
+
+.content{
+    // overflow: scroll;
+}
+
+.danger{
+    color: var(--bs-danger);
+}
+/*
  // базовый сброс настроекКОНЕЦ
 
-#check-mark_button{ /*галочка для всех кнопок*/
+#check-mark_button{ /*галочка для всех кнопок*
     display: none;
     color: green;
     font-size: 15px;
@@ -57,27 +94,28 @@ img {
 // }
 
 .styled-button {
-    background-color:$buttonColor; /* Основной цвет кнопки */
-    color: white; /* Цвет текста */
-    border: none; /* Убираем рамку */
-    border-radius: 5px; /* Скругление углов */
-    //padding: 15px 30px; /* Внутренние отступы */
-    font-size: 14px; /* Размер шрифта */
-    cursor: pointer; /* Курсор при наведении */
-    transition: background-color 0.3s, transform 0.1s; /* Плавные переходы */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color:$buttonColor; /* Основной цвет кнопки *
+    color: white; /* Цвет текста *
+    border: none; /* Убираем рамку *
+    border-radius: 5px; /* Скругление углов *
+    //padding: 15px 30px; /* Внутренние отступы *
+    font-size: 14px; /* Размер шрифта *
+    cursor: pointer; /* Курсор при наведении *
+    transition: background-color 0.3s, transform 0.1s; /* Плавные переходы 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень *
 }
 
 .styled-button:hover {
-    background-color: #0056b3; /* Цвет кнопки при наведении */
+    background-color: #0056b3; /* Цвет кнопки при наведении *
 }
 
 .styled-button:active {
-    background-color: #004085; /* Цвет кнопки при нажатии */
-    transform: scale(0.95); /* Уменьшение размера кнопки при нажатии */
+    background-color: #004085; /* Цвет кнопки при нажатии *
+    transform: scale(0.95); /* Уменьшение размера кнопки при нажатии *
 }
 
 .styled-button:focus {
-    outline: none; /* Убираем обводку при фокусе */
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Тень при фокусе */
+    outline: none; /* Убираем обводку при фокусе *
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Тень при фокусе *
 }
+*/
