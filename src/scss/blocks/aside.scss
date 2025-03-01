@@ -2,7 +2,7 @@
   padding: 1.2rem 0.8rem;
   gap: 1.2rem;
   background-color: $cl-grey-super-light;
-  // overflow: scroll;
+  overflow: auto;
   &--hidden{
     width: fit-content;
     .aside__header{
@@ -55,7 +55,6 @@
 }
 .user{
   column-gap: 1.2rem;
-  font-size: 1.2rem;
   &__pic{
     width: 2rem;
   }
@@ -74,7 +73,6 @@
   padding: 1.2rem 1.6rem;
   width: 100%;
   gap: 1.2rem;
-  font-size: 1.4rem;
   border-radius: 0.8rem;
   &--active{
     background-color: $cl-grey-light;
@@ -87,7 +85,6 @@
   &__title{
     flex-grow: 1;
     text-align: start;
-    font-size: 1.2rem;
   }
   &__angle{
     width: 20px;
