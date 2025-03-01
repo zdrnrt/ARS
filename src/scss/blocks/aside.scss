@@ -14,7 +14,8 @@
     .aside-nav__item--collapse,
     .nav-item__title,
     .nav-item__angle,
-    .aside__profile{ 
+    .user__name,
+    .aside-profile__logout{ 
       display: none!important;
     }
     .nav-item{
@@ -54,6 +55,7 @@
 }
 .user{
   column-gap: 1.2rem;
+  font-size: 1.2rem;
   &__pic{
     width: 2rem;
   }
@@ -85,6 +87,7 @@
   &__title{
     flex-grow: 1;
     text-align: start;
+    font-size: 1.2rem;
   }
   &__angle{
     width: 20px;
