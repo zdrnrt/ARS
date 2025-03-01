@@ -1,49 +1,37 @@
-<div id="stock" class="row h-100">
-    <div class="col-10 border">
-        <div class="row">
-            <div class="col-3 border">
-                <div class="stock__products column mb-2">
-                    <header class="column__header">Направление 1 </header>
-                    <div id="products-content" class="column-content column-content--products">
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-9 border">
-                <div class="column">
-                    <div class="column-content"></div>
-                </div>
+<div id="stock" class="h-100 stock-content">
+    <!-- <div class=""> -->
+        <div class="column column--products">
+            <header class="column__header">Направление 1 </header>
+            <div id="products-content" class="column-content column-content--products">
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 border">
-                <div class="column">
-                    <header class="column__header">Группа складов 1</header>
-                    <div id="warehouse-content" class="column-content"></div>
-                </div>
-            </div>
-            <div class="col-9 border">
-                <div class="column">
-                    <header class="column__header">
-                        Управление параметрами ТЗ
-                        <button class="btn btn-primary" id="addParametsStock" data-bs-toggle="modal" data-bs-target="#modalTimetable">Добавить</button>
-                    </header>
-                    <div id="parameters-content" class="parameters-content column-content"></div>
-                </div>
-            </div>
+        <div class="column column--warehouse">
+            <header class="column__header">Группа складов 1</header>
+            <div id="warehouse-content" class="column-content"></div>
         </div>
-
-    </div>
-
-    <div class="col-2 h-100 border">
-        <div class="planner">
-            Планировщик задач
-            <div id="planner-content"></div>
+        <div class="column column--chart">
+            <div class="column-content"></div>
         </div>
-    </div>
-    
+        <div class="column column--table">
+            <div class="column-content"></div>
+        </div>
+        <div class="column column--parameters">
+            <header class="column__header">
+                Управление параметрами ТЗ
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#stockModalParameters">Добавить</button>
+            </header>
+            <div id="parameters-content" class="parameters-content column-content"></div>
+        </div>
+        <div class="column column--planner">
+            <header class="column__header">
+                Планировщик задач
+            </header>
+            <div id="planner-content" class="column-content"></div>
+        </div>
+    <!-- </div> -->
+
 </div>
-<div class="container_stock__wrapper">
+<div class="container_stock__wrapper d-none">
     <div class="container_stock">
 
         <!-- Левая панель -->
@@ -82,7 +70,7 @@
 <!-- data-title="Центральный" -->
 
 <!-- Модальное окно -->
-<div class="modal fade" id="modalTimetable" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="stockModalParameters" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

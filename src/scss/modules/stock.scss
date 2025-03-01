@@ -1,0 +1,30 @@
+.stock-content{
+    padding: 1.2rem;
+    display: grid;
+    grid-template-areas: 
+        "products chart table planner"
+        "warehouse parameters parameters planner";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 60% 40%;
+    gap: 1.2rem;
+    .column{
+        &--products{
+            grid-area: products;
+        }
+        &--table{
+            grid-area: table;
+        }
+        &--warehouse{
+            grid-area: warehouse;
+        }
+        &--chart{
+            grid-area: chart;
+        }
+        &--parameters{
+            grid-area: parameters;
+        }
+        &--planner{
+            grid-area: planner;
+        }
+    }
+}
