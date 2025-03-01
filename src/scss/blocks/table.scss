@@ -4,6 +4,7 @@
 .table{
   width: 100%;
   display: block;
+  margin-bottom: 0;
   overflow: auto;
   &__table{
     // background-color: var(--bs-border-color);

@@ -14,7 +14,7 @@ import './blocks/aside.js';
 
 // module
 import "./modules/stock.js";
-import showContent_orderCalculation from "./modules/orderCalculation.js";
+import "./modules/orderCalculation.js";
 import showContent_orderParameters from "./modules/orderParameters.js";
 import showContent_promoAz from "./modules/promoAz.js";
 import showContent_settingsAz from "./modules/settingsAz.js";

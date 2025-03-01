@@ -1,0 +1,24 @@
+.orderCalculation{
+    padding: 0.6rem;
+    display: grid;
+    grid-template-areas:
+      "products table status"
+      "warehouse table status";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 60% 40%;
+    gap: 0.6rem;
+    .column{
+        &--products{
+            grid-area: products;
+        }
+        &--table{
+            grid-area: table;
+        }
+        &--warehouse{
+            grid-area: warehouse;
+        }
+        &--status{
+            grid-area: status;
+        }
+    }
+}

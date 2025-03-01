@@ -1,4 +1,4 @@
-export default window.showContent_orderCalculation = function() {
+window.orderCalculationOpen = function() {
 
     fetch('./src/html/orderCalculation.html')
         .then(response => {
@@ -8,7 +8,7 @@ export default window.showContent_orderCalculation = function() {
             return response.text(); 
         })
         .then(html => {
-            document.getElementById('mainContentOrderCalculation').innerHTML = html;
+            document.getElementById('content').innerHTML = html;
         })
         .catch(error => {
             console.error('Возникла проблема с операцией выборки:', error);

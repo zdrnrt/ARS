@@ -1,53 +1,138 @@
-<div class="container_orderCalculation__wrapper">
-    <div class="column_orderCalculation parameters_orderCalculation" data-title="Управление параметрами ТЗ">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Управление параметрами отображения
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="param1" name="param1">
-                            <label for="param1">Параметр 1</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="param2" name="param2">
-                            <label for="param2">Параметр 2</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="param3" name="param3">
-                            <label for="param3">Параметр 3</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="param4" name="param4">
-                            <label for="param4">Параметр 4</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div id="orderCalculation" class="h-100 orderCalculation">
+    <div class="column column--products">
+        <header class="column__header">Направление 1 </header>
+        <div id="products-content" class="column-content column-content--products">
+
         </div>
-    </div> 
-        
-    <div class="container_orderCalculation">
-        <!-- Левая панель -->
-        <div class="left-panel_orderCalculation">
-            <div class="column_orderCalculation product_tree_orderCalculation" data-title="Направление 1"></div>
-            <div class="column_orderCalculation warehouse_orderCalculation" data-title="Группа складов"></div>
+    </div>
+    <div class="column column--warehouse">
+        <header class="column__header">Группа складов 1</header>
+        <div id="warehouse-content" class="column-content"></div>
+    </div>
+    <div class="column column--table">
+        <div class="table">
+            <table class="table__table">
+                <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Склад</th>
+                    <th>Уровень 1</th>
+                    <th>Уровень 2</th>
+                    <th>Уровень 3</th>
+                    <th>Квант</th>
+                    <th>MOQ</th>
+                    <th>Дней до следующей поставки	</th>
+                    <th>Прогноз СДП</th>
+                    <th>Текущий ост</th>
+                    <th>Рабочий объем</th>
+                    <th>Расход до след поставки</th>
+                    <th>Товар в пути</th>
+                    <th>Остаток на момент поступления</th>
+                    <th>Итого СЗ</th>
+                    <th>Заказ</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="column column--status">
+        <header class="column__header">Статус по заказам</header>
+        <div class="column-content">
+            <label class="d-block mb-3" for="orderCalculationCount">
+                <input type="checkbox" class="form-check-input" id="orderCalculationCount" name="orderCalculationCount">
+                Рассчитано
+            </label>
+            <label class="d-block mb-3" for="orderCalculationAuto">
+                <input type="checkbox" class="form-check-input" id="orderCalculationAuto" name="orderCalculationAuto">
+                Автоматически
+                 отправлено</label>
+            <label class="d-block mb-3" for="orderCalculationManual">
+                <input type="checkbox" class="form-check-input" id="orderCalculationManual" name="orderCalculationManual">
+                Отправлено
+                 вручную</label>
+            <label class="d-block mb-3" for="orderCalculationRegular">
+                <input type="checkbox" class="form-check-input" id="orderCalculationRegular" name="orderCalculationRegular">
+                Регулярный
+            </label>
+            <label class="d-block" for="orderCalculationPromo">
+                <input type="checkbox" class="form-check-input" id="orderCalculationPromo" name="orderCalculationPromo">
+                Промо
+            </label>
         </div>
 
-        <!-- Центральная часть -->
-        <div class="middle_orderCalculation">
-            <div class="column_orderCalculation central_orderCalculation">
-                <div class="column_orderCalculation graph_orderCalculation" data-title="Таблица"></div>
-            </div>
-        </div>
-
-        <!-- Блок "Планировщик" -->
-        <div class="right-panel_orderCalculation">
-            <div class="column_orderCalculation order_status_orderCalculation" data-title="Статус по заказам"></div>
-        </div>
     </div>
 </div>
