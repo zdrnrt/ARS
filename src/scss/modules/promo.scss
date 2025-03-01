@@ -1,0 +1,22 @@
+.promo{
+    padding: 0.6rem;
+    display: grid;
+    grid-template-areas: 
+        "calendar table"
+        "type table"
+        "list table";
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: minmax(auto, 10%) minmax(45%, 1fr) minmax(45%, 1fr);
+    gap: 0.6rem;
+    .column{
+        &--calendar{
+            grid-area: calendar;
+        }
+        &--list{
+            grid-area: list;
+        }
+        &--table{
+            grid-area: table;
+        }
+    }
+}
