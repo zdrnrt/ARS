@@ -10,12 +10,15 @@
   <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script> -->
    
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script> -->
+
+
   <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script> -->
 
   <title>SputnikPro_ARS</title>
-  <script type="module" crossorigin src="/ARS/assets/index-CN-3vUEG.js"></script>
-  <link rel="stylesheet" crossorigin href="/ARS/assets/index-BqSV2AsA.css">
+  <script type="module" crossorigin src="/ARS/assets/index-DDixg6EJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/ARS/assets/index-pqS_2SxV.css">
 </head>
 
 <body>
@@ -48,18 +51,19 @@
             <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M14%205C14%205.55228%2013.5523%206%2013%206C12.4477%206%2012%205.55228%2012%205C12%204.44772%2012.4477%204%2013%204C13.5523%204%2014%204.44772%2014%205ZM11.063%204.5H3.5C3.22386%204.5%203%204.72386%203%205C3%205.27614%203.22386%205.5%203.5%205.5H11.063C11.285%206.36261%2012.0681%207%2013%207C13.9319%207%2014.715%206.36261%2014.937%205.5H16.5C16.7761%205.5%2017%205.27614%2017%205C17%204.72386%2016.7761%204.5%2016.5%204.5H14.937C14.715%203.63739%2013.9319%203%2013%203C12.0681%203%2011.285%203.63739%2011.063%204.5Z'%20fill='black'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M8%209.5C8%2010.0523%207.55228%2010.5%207%2010.5C6.44772%2010.5%206%2010.0523%206%209.5C6%208.94772%206.44772%208.5%207%208.5C7.55228%208.5%208%208.94772%208%209.5ZM8.93699%2010H16.5C16.7761%2010%2017%209.77614%2017%209.5C17%209.22386%2016.7761%209%2016.5%209H8.93699C8.71497%208.13739%207.93192%207.5%207%207.5C6.06808%207.5%205.28503%208.13739%205.06301%209H3.5C3.22386%209%203%209.22386%203%209.5C3%209.77614%203.22386%2010%203.5%2010H5.06301C5.28503%2010.8626%206.06808%2011.5%207%2011.5C7.93192%2011.5%208.71497%2010.8626%208.93699%2010Z'%20fill='black'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12%2014.5C12%2015.0523%2011.5523%2015.5%2011%2015.5C10.4477%2015.5%2010%2015.0523%2010%2014.5C10%2013.9477%2010.4477%2013.5%2011%2013.5C11.5523%2013.5%2012%2013.9477%2012%2014.5ZM9.06301%2015C9.28503%2015.8626%2010.0681%2016.5%2011%2016.5C11.9319%2016.5%2012.715%2015.8626%2012.937%2015H16.5C16.7761%2015%2017%2014.7761%2017%2014.5C17%2014.2239%2016.7761%2014%2016.5%2014H12.937C12.715%2013.1374%2011.9319%2012.5%2011%2012.5C10.0681%2012.5%209.28503%2013.1374%209.06301%2014L3.5%2014C3.22386%2014%203%2014.2239%203%2014.5C3%2014.7761%203.22386%2015%203.5%2015L9.06301%2015Z'%20fill='black'/%3e%3c/svg%3e" alt="Данные" class="nav-item__icon">
             <div class="nav-item__title">Расчет заказа</div>
           </button>
-          <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
+          <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this); promoOpen();">
             <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3%2016.5L8%209L11.5%2015.5L16%203M16%203L14%205M16%203L16.5%205.5'%20stroke='black'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="Нормирование" class="nav-item__icon">
-            <div class="nav-item__title">Параметры Заказов</div>
+            <div class="nav-item__title">Промо</div>
           </button>
+          <!--
           <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M7%203C7.27614%203%207.5%203.22386%207.5%203.5V4H12.5V3.5C12.5%203.22386%2012.7239%203%2013%203C13.2761%203%2013.5%203.22386%2013.5%203.5V4H15C16.1046%204%2017%204.89543%2017%206V8V9V16C17%2017.1046%2016.1046%2018%2015%2018H5C3.89543%2018%203%2017.1046%203%2016V9V8V6C3%204.89543%203.89543%204%205%204H6.5V3.5C6.5%203.22386%206.72386%203%207%203ZM12.5%205V5.5C12.5%205.77614%2012.7239%206%2013%206C13.2761%206%2013.5%205.77614%2013.5%205.5V5H15C15.5523%205%2016%205.44772%2016%206V8H4V6C4%205.44772%204.44772%205%205%205H6.5V5.5C6.5%205.77614%206.72386%206%207%206C7.27614%206%207.5%205.77614%207.5%205.5V5H12.5ZM16%209V16C16%2016.5523%2015.5523%2017%2015%2017H5C4.44772%2017%204%2016.5523%204%2016V9H16Z'%20fill='black'/%3e%3c/svg%3e" alt="Цели" class="nav-item__icon">
+            <img src="./public/images/icons/calendar.svg" alt="Цели" class="nav-item__icon">
             <div class="nav-item__title">Цели</div>
           </button>
           <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center collapsed" _onclick="tabChange(this);" data-bs-toggle="collapse" data-bs-target="#nav-collapse" aria-expanded="true" aria-controls="nav-collapse">
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5%204H15C15.5523%204%2016%204.44772%2016%205V15C16%2015.5523%2015.5523%2016%2015%2016H5C4.44772%2016%204%2015.5523%204%2015V5C4%204.44772%204.44772%204%205%204ZM3%205C3%203.89543%203.89543%203%205%203H15C16.1046%203%2017%203.89543%2017%205V15C17%2016.1046%2016.1046%2017%2015%2017H5C3.89543%2017%203%2016.1046%203%2015V5ZM6%2011C6.55228%2011%207%2010.5523%207%2010C7%209.44772%206.55228%209%206%209C5.44772%209%205%209.44772%205%2010C5%2010.5523%205.44772%2011%206%2011ZM10%2011C10.5523%2011%2011%2010.5523%2011%2010C11%209.44772%2010.5523%209%2010%209C9.44772%209%209%209.44772%209%2010C9%2010.5523%209.44772%2011%2010%2011ZM15%2010C15%2010.5523%2014.5523%2011%2014%2011C13.4477%2011%2013%2010.5523%2013%2010C13%209.44772%2013.4477%209%2014%209C14.5523%209%2015%209.44772%2015%2010Z'%20fill='black'/%3e%3c/svg%3e" alt="Данные" class="nav-item__icon">
+            <img src="./public/images/icons/settings.svg" alt="Данные" class="nav-item__icon">
             <div class="nav-item__title">Карта процессов</div>
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20opacity='0.8'%3e%3cpath%20d='M8%2014L12%2010L8%206'%20stroke='black'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e" alt="Данные" class="nav-item__angle">
+            <img src="./public/images/icons/angle.svg" alt="Данные" class="nav-item__angle">
           </button>
           <div id="nav-collapse" class="collapse aside-nav__item aside-nav__item--collapse" data-bs-parent="nav">
             <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
@@ -70,17 +74,18 @@
             </button>
           </div>
           <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5%204H15C15.5523%204%2016%204.44772%2016%205V7H10.5H9.5H4V5C4%204.44772%204.44772%204%205%204ZM4%208H9.5V11.5H4V8ZM3%2012.5V11.5V8V7V5C3%203.89543%203.89543%203%205%203H15C16.1046%203%2017%203.89543%2017%205V7V8V11.5V12.5V15C17%2016.1046%2016.1046%2017%2015%2017H5C3.89543%2017%203%2016.1046%203%2015V12.5ZM16%2011.5V8H10.5V11.5H16ZM10.5%2012.5H16V15C16%2015.5523%2015.5523%2016%2015%2016H10.5V12.5ZM9.5%2012.5V16H5C4.44772%2016%204%2015.5523%204%2015V12.5H9.5Z'%20fill='black'/%3e%3c/svg%3e" alt="Факторный анализ" class="nav-item__icon">
+            <img src="./public/images/icons/table.svg" alt="Факторный анализ" class="nav-item__icon">
             <div class="nav-item__title">Факторный анализ</div>
           </button>
           <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5%204H15C15.5523%204%2016%204.44772%2016%205V7H10.5H9.5H4V5C4%204.44772%204.44772%204%205%204ZM4%208H9.5V11.5H4V8ZM3%2012.5V11.5V8V7V5C3%203.89543%203.89543%203%205%203H15C16.1046%203%2017%203.89543%2017%205V7V8V11.5V12.5V15C17%2016.1046%2016.1046%2017%2015%2017H5C3.89543%2017%203%2016.1046%203%2015V12.5ZM16%2011.5V8H10.5V11.5H16ZM10.5%2012.5H16V15C16%2015.5523%2015.5523%2016%2015%2016H10.5V12.5ZM9.5%2012.5V16H5C4.44772%2016%204%2015.5523%204%2015V12.5H9.5Z'%20fill='black'/%3e%3c/svg%3e" alt="Факторный анализ" class="nav-item__icon">
+            <img src="./public/images/icons/table.svg" alt="Факторный анализ" class="nav-item__icon">
             <div class="nav-item__title">Сценарии</div>
           </button>
           <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M5%204H15C15.5523%204%2016%204.44772%2016%205V7H10.5H9.5H4V5C4%204.44772%204.44772%204%205%204ZM4%208H9.5V11.5H4V8ZM3%2012.5V11.5V8V7V5C3%203.89543%203.89543%203%205%203H15C16.1046%203%2017%203.89543%2017%205V7V8V11.5V12.5V15C17%2016.1046%2016.1046%2017%2015%2017H5C3.89543%2017%203%2016.1046%203%2015V12.5ZM16%2011.5V8H10.5V11.5H16ZM10.5%2012.5H16V15C16%2015.5523%2015.5523%2016%2015%2016H10.5V12.5ZM9.5%2012.5V16H5C4.44772%2016%204%2015.5523%204%2015V12.5H9.5Z'%20fill='black'/%3e%3c/svg%3e" alt="Факторный анализ" class="nav-item__icon">
+            <img src="./public/images/icons/table.svg" alt="Факторный анализ" class="nav-item__icon">
             <div class="nav-item__title">Постановщик задач</div>
           </button>
+          -->
         </nav>
         <div class="aside__profile aside-profile d-flex justify-content-between align-items-center gap-2">
           <button class="aside-profile__user user flex-grow-1 d-flex justify-content-start align-items-center">
