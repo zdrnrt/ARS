@@ -76,7 +76,7 @@ window.stockWarehouseDraw = function(){
     let template = '<div>'
     if (WAREHOUSE){
         WAREHOUSE.forEach(el => {
-            template += `<div><label class="form-check-label"><input class="form-check-input" type="checkbox" name="warehouse" value="${el.id}"> ${el.title}</label></div>`
+            template += `<div class="mb-1"><label class="form-check-label"><input class="form-check-input" type="checkbox" name="warehouse" value="${el.id}"> ${el.title}</label></div>`
         });
     } else {
         template += 'Ничего не найдено'
@@ -90,11 +90,11 @@ window.stockProducstDraw = function(){
 
     if (PRODUCTS){
         for (const l2 in PRODUCTS){
-            template += `<div><label><input type="checkbox"> ${l2}</label>`
+            template += `<div class="mb-1"><label><input type="checkbox"> ${l2}</label>`
             for (const l3 in PRODUCTS[l2]){
-                template += `<div><label><input type="checkbox"> ${l3}</label>`
+                template += `<div class="products-item__sub"><label><input type="checkbox"> ${l3}</label>`
                 for (const l4 in PRODUCTS[l2][l3]){
-                    template += `<div><label><input type="checkbox"> ${l4}</label>`
+                    template += `<div class="products-item__sub"><label><input type="checkbox"> ${l4}</label>`
                     for (const l5 in PRODUCTS[l2][l3][l4]){
                         for (const product of PRODUCTS[l2][l3][l4][l5]){
                             // for (const v of Object.values(product)){

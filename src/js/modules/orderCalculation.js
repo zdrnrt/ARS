@@ -9,6 +9,9 @@ window.orderCalculationOpen = function() {
         })
         .then(html => {
             document.getElementById('content').innerHTML = html;
+            // TODO отрисовки в глобавльные функции
+            stockWarehouseDraw();
+            stockProducstDraw();
         })
         .catch(error => {
             console.error('Возникла проблема с операцией выборки:', error);
