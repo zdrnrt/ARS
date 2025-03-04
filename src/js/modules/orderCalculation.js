@@ -1,5 +1,5 @@
 window.orderCalculationOpen = function() {
-
+    loadingToggle();
     fetch('./src/html/orderCalculation.html')
         .then(response => {
             if (!response.ok) {
@@ -12,6 +12,7 @@ window.orderCalculationOpen = function() {
             // TODO отрисовки в глобавльные функции
             stockWarehouseDraw();
             stockProducstDraw();
+            loadingToggle();
         })
         .catch(error => {
             console.error('Возникла проблема с операцией выборки:', error);

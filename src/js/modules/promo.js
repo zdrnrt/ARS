@@ -1,5 +1,6 @@
 
 window.promoOpen = function() {
+    loadingToggle();
     fetch('./src/html/promo.html')
         .then(response => {
             if (!response.ok) {
@@ -10,6 +11,7 @@ window.promoOpen = function() {
         .then(html => {
             document.getElementById('content').innerHTML = html;
 
+            loadingToggle();
             // document.getElementById('mainContentStock').innerHTML = html;
 
             // stockWarehouseDraw();

@@ -11,6 +11,7 @@ import '../scss/style.scss';
 
 // blocks
 import './blocks/aside.js';
+import './blocks/loading.js';
 
 // module
 import "./modules/stock.js";

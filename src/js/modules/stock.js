@@ -1,5 +1,6 @@
 
 window.stockOpen = function() {
+    loadingToggle();
     fetch('./src/html/stock.html')
         .then(response => {
             if (!response.ok) {
@@ -14,11 +15,11 @@ window.stockOpen = function() {
 
             stockWarehouseDraw();
             stockProducstDraw();
-
+            loadingToggle();
         })
         .catch(error => {
             console.error('Возникла проблема с операцией выборки: ', error);
-        });
+        })
 }
 
 
