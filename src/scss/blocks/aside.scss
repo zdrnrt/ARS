@@ -2,7 +2,7 @@
   padding: 1.2rem 0.8rem;
   gap: 1.2rem;
   background-color: $cl-grey-super-light;
-  overflow: auto;
+  // overflow: auto;
   &--hidden{
     width: fit-content;
     .aside__header{
@@ -43,11 +43,36 @@
     width: 14.5rem;
   }
 }
-.aside-expand{
-  transition: $transition-time;
-  transform: rotate(180deg);
+.aside-menu{
+  &__btn{
+    transition: $transition-time;
+  }
   &__icon{
     width: 2rem;
+  }
+  &__dropdown{
+    top: 0!important;
+    left: 100%!important;
+    width: max-content;
+    min-width: 26rem;
+    padding: 1.6rem 0;
+    transform: none!important;
+    box-shadow: 0 4px 12px 0 rgba(86, 88, 96, 0.1);
+    border: none;
+  }
+}
+.dropdown-menu{
+  &__link{
+    display: block;
+    padding: 0.6rem 1.6rem;
+    color: #2c2d31;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    transition: $transition-time;
+    &:hover{
+      color: $cl-purple;
+      background-color: $cl-grey-light;
+    }
   }
 }
 .aside-profile{
