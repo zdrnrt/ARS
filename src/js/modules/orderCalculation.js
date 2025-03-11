@@ -10,8 +10,9 @@ window.orderCalculationOpen = function() {
         .then(html => {
             document.getElementById('content').innerHTML = html;
             // TODO отрисовки в глобавльные функции
-            stockWarehouseDraw();
-            stockProducstDraw();
+            producstDraw();
+            // stockWarehouseDraw();
+            // stockProducstDraw();
             loadingToggle();
         })
         .catch(error => {

@@ -10,8 +10,10 @@ import '../scss/style.scss';
 //import showContent_assortmentStructure from "./modules/assortmentStructure.js";
 
 // blocks
+import './blocks/form.js';
 import './blocks/aside.js';
 import './blocks/loading.js';
+import './blocks/products.js'
 
 // module
 import "./modules/stock.js";
@@ -30,27 +32,57 @@ Papa.parse("./data/data_items_24_02.csv", {
     // console.log(results.data[0]) // данные
     // console.log(results.meta.fields) // ключи значений
     const [l2, l3, l4, l5, nom, code] = results.meta.fields;
-    window.PRODUCTS = {};
+    window.PRODUCTS_L2 = [];
+    window.PRODUCTS_L3 = [];
+    window.PRODUCTS_L4 = [];
+    window.PRODUCTS_L5 = [];
+    // window.PRODUCTS = results.data;
+    window.PRODUCTS = [];
+    const level = {
+      l2: '',
+      l3: '',
+      l4: '',
+      l5: ''
+    };
+
     results.data.forEach( (el) => {
-      if (!(el[l2] in PRODUCTS) && el[l2] != '' ){
+      if (!PRODUCTS_L2.includes(el[l2]) && !!el[l2]){
+        PRODUCTS_L2.push(el[l2]);
+      }
+      if (!PRODUCTS_L3.includes(el[l3]) && !!el[l3]){
+        PRODUCTS_L3.push(el[l3]);
+      }
+      if (!PRODUCTS_L4.includes(el[l4]) && !!el[l4]){
+        PRODUCTS_L4.push(el[l4]);
+      }
+      if (!PRODUCTS_L5.includes(el[l5]) && !!el[l5]){
+        PRODUCTS_L5.push(el[l5]);
+      }
+
+      if (!(el[l2] in PRODUCTS) && !!el[l2] ){
         PRODUCTS[el[l2]] = {}
       }
-      if ( PRODUCTS[el[l2]] !== undefined && el[l3] !== undefined && !(el[l3] in PRODUCTS[el[l2]]) ){
+
+      if ( !!PRODUCTS[el[l2]] && !!el[l3]&& !(el[l3] in PRODUCTS[el[l2]]) ){
         PRODUCTS[el[l2]][el[l3]] = {}
       }
-      if ( el[l4] !== undefined && !(el[l4] in PRODUCTS[el[l2]][el[l3]]) ){
+      if ( !!el[l4] && !(el[l4] in PRODUCTS[el[l2]][el[l3]]) ){
         PRODUCTS[el[l2]][el[l3]][el[l4]] = {}
       }
-      if ( el[l5] !== undefined && !(el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]) ){
+      if ( !!el[l5] && !(el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]) ){
         PRODUCTS[el[l2]][el[l3]][el[l4]][[el[l5]]] = []
-      } else if (el[l5] !== undefined && el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]){
+      } else if ( !!el[l5] && el[l5] in PRODUCTS[el[l2]][el[l3]][el[l4]]){
         const item = {};
         item[nom] = el[nom];
         item[code] = el[code];
         PRODUCTS[el[l2]][el[l3]][el[l4]][[el[l5]]].push(item)
       }
     })
-    console.log(PRODUCTS)
+    // console.log(PRODUCTS)
+    // console.log(PRODUCTS_L2)
+    // console.log(PRODUCTS_L3)
+    // console.log(PRODUCTS_L4)
+    // console.log(PRODUCTS_L5)
   }
 })
 

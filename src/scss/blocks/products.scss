@@ -2,6 +2,21 @@
   &__sub{
     padding-left: 1rem;
   }
-  &__label{
+  &__label,
+  &__angle{
+    cursor: pointer;
+  }
+  &__category{
+    padding-left: 1em;
+  }
+  &__arrow{
+    cursor: pointer;
+    transform: rotate(-90deg);
+    &.collapsed{
+      transform: rotate(90deg);
+    }
+    img{
+      width: 20px;
+    }
   }
 }

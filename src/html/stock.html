@@ -2,7 +2,7 @@
     <!-- <div class=""> -->
         <div class="column column--products">
             <header class="column__header">Направление 1 </header>
-            <div id="products-content" class="column-content column-content--products">
+            <div id="productsContent" class="column-content column-content--products">
             </div>
         </div>
         <div class="column column--warehouse">
@@ -138,7 +138,7 @@
         <!-- Левая панель -->
         <!-- <div class="_left-panel d-none col-2 h-100 d-flex flex-column">
             <div class="column  product_tree" data-title="Направление 1">
-                <div id="products-content" class="products-content"></div>
+                <div id="productsContent" class="products-content"></div>
             </div>
             <div class="column warehouse" data-title="Группа складов">
                 <div id="warehouse-content" class="warehouse-content"></div>
@@ -186,7 +186,7 @@
                             <label class="col-5" for="roundBox">Округление до короба</label>
                             <div class="col-7">
                                 <select id="roundBox" class="form-select" name="roundBox"
-                                    onchange="stockParametersValue(this);">
+                                    onchange="formParameterValue(this);">
                                     <option value="">Не использовать</option>
                                     <option value="down">Всегда вниз</option>
                                     <option value="up">Всегда вверх</option>
@@ -215,7 +215,7 @@
                             <label class="col-5" for="roundMoq">Округление до MOQ</label>
                             <div class="col-7">
                                 <select id="roundMoq" name="roundMoq" class="form-select"
-                                    onchange="stockParametersValue(this);">
+                                    onchange="formParameterValue(this);">
                                     <option value="">Не использовать</option>
                                     <option value="down" selected>Всегда вниз</option>
                                     <option value="up">Всегда вверх</option>
@@ -331,9 +331,9 @@
                             <label class="col-12 mb-2" for="cutOsgSz">Отсечка по ОСГ СЗ</label>
                             <div class="col-12 d-flex align-items-center gap-4">
                                 <label><input class="form-check-input" type="radio" name="cutOsgSz" value="no"
-                                        onchange="stockParametersValue(this);"> Не использовать</label>
+                                        onchange="formParameterValue(this);"> Не использовать</label>
                                 <label><input class="form-check-input" type="radio" name="cutOsgSz" value="value"
-                                        checked onchange="stockParametersValue(this);"> Задать значение порога</label>
+                                        checked onchange="formParameterValue(this);"> Задать значение порога</label>
                             </div>
                         </div>
                         <input class="form-control form-control--value" name="cutOsgSzValue" type="text"
@@ -344,9 +344,9 @@
                             <label class="col-12 mb-2" for="cutTurnSz">Отсечка по оборачиваемости СЗ</label>
                             <div class="col-12 d-flex align-items-center gap-4">
                                 <label><input class="form-check-input" type="radio" name="cutTurnSz" value="no"
-                                        onchange="stockParametersValue(this);"> Не использовать</label>
+                                        onchange="formParameterValue(this);"> Не использовать</label>
                                 <label><input class="form-check-input" type="radio" name="cutTurnSz" checked
-                                        value="value" onchange="stockParametersValue(this);"> Задать значение
+                                        value="value" onchange="formParameterValue(this);"> Задать значение
                                     порога</label>
                             </div>
                         </div>
