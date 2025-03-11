@@ -1,3 +1,4 @@
+import { Chart } from 'chart.js/auto'
 
 window.stockOpen = function() {
     loadingToggle();
@@ -15,6 +16,7 @@ window.stockOpen = function() {
 
             stockWarehouseDraw();
             producstDraw();
+            stockChartDraw();
             loadingToggle();
         })
         .catch(error => {
@@ -70,4 +72,82 @@ window.stockWarehouseDraw = function(){
     }
     template += '</div>'
     document.getElementById('warehouse-content').insertAdjacentHTML('beforeend', template);
+}
+
+window.stockChartDraw = function(){
+    const chart = document.getElementById('stock-chart');
+
+    function randomData() {
+        let arr = new Array(10);
+        for (let i = 0; i < arr.length; i++){
+            arr[i] = Math.floor(Math.random() * 10000)
+        }
+        return arr
+    }
+
+    const stockChart = new Chart(chart, {
+        type: 'line',
+        data: {
+            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            datasets: [
+                {
+                    label: 'Оверсток факт',
+                    data: [46_000, 50_600, 45_540, 36_432, 40_075, 44_083, 48_491, 53_340, 48_006, 43_205],
+                    fill: true,
+                },
+                {
+                    label: 'Оверсток план',
+                    data: [30_000, 33_000, 29_700, 23_760, 26_136, 28_750, 31_625, 34_787, 31_308, 28_177],
+                    fill: false,
+                },
+                {
+                    label: 'Неактивный факт',
+                    data: [27_000, 29_700, 26_730, 21_384, 23_522, 25_875, 28_462, 31_308, 28_177, 25_360],
+                    fill: true,
+                },
+                {
+                    label: 'Неактивный план',
+                    data: [20_000, 22_000, 19_800, 15_840, 17_424, 19_166, 21_083, 23_191, 20_872, 18_785],
+                    fill: false,
+                },
+                {
+                    label: 'Страховые запасы факт',
+                    data: [69_000, 75_900, 68_310, 54_648, 60_113, 66_124, 72_736, 80_010, 72_009, 64_808],
+                    fill: true,
+                },
+                {
+                    label: 'Страховые запасы план',
+                    data: [75_000, 82_500, 74_250, 59_400, 65_340, 71_874, 79_061, 86_968, 78_271, 70_444],
+                    fill: false,
+                },
+                {
+                    label: 'Презентационный запас факт',
+                    data: [46_000, 50_600, 45_540, 36_432, 40_075, 44_083, 48_491, 53_340, 48_006, 43_205],
+                    fill: true,
+                },
+                {
+                    label: 'Презентационный запас план',
+                    data: [50_200, 55_220, 49_698, 39_758, 43_734, 48_108, 52_918, 58_210, 52_389, 47_150],
+                    fill: false,
+                },
+                {
+                    label: 'Запас под продажу',
+                    data: [45_000, 49_500, 44_550, 35_640, 39_204, 43_124, 47_437, 52_181, 46_962, 42_266],
+                    fill: true,
+                },
+            ]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    align: 'start',
+                    fullSize: true
+                }  
+            },
+            aspectRatio: 0.8,
+            responsive: true, // Instruct chart js to respond nicely.
+            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+        }
+    });
 }

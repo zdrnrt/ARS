@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.8",
     "jquery": "^3.7.1",
     "papaparse": "^5.5.2"
   }
