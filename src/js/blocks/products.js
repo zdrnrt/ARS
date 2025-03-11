@@ -50,23 +50,23 @@ window.producstDraw = function(){
           let id = l2.split(' ')[0];
           template += `
             <div class="d-flex justify-content-between align-items-center _collapsed products-item">
-              <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l2}" onchange="productCheck(this);">${l2}</label>
+              <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l2}" data-child="${l2}" onchange="productCheck(this);">${l2}</label>
               <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
                 <img src="./public/images/icons/angle.svg" alt="Данные">
               </div>
             </div>
-            <div id="l3-collapse-${id}" data-parent="${l2}" data-l3-title="${l2}" class="products-item__category collapse show">
+            <div id="l3-collapse-${id}" data-category="${l2}" data-l3-title="${l2}" class="products-item__category collapse show">
           `;
           for (const l3 in PRODUCTS[l2]){
               id = l3.split(' ')[0];
               template += `
                 <div class="d-flex justify-content-between align-items-center _collapsed products-item">
-                  <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l3}" onchange="productCheck(this);">${l3}</label>
+                  <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l3}" data-child="${l3}" data-parent="${l2}" onchange="productCheck(this);">${l3}</label>
                   <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
                     <img src="./public/images/icons/angle.svg" alt="Данные">
                   </div>
                 </div>
-                <div id="l3-collapse-${id}" data-parent="${l3}" data-l3-title="${l3}" class="products-item__category collapse show">
+                <div id="l3-collapse-${id}" data-category="${l3}" data-l3-title="${l3}" class="products-item__category collapse show">
               `;
               // template += `<div class="products-item__sub"><label><input type="checkbox"> ${l3}</label>`
               for (const l4 in PRODUCTS[l2][l3]){
@@ -74,12 +74,12 @@ window.producstDraw = function(){
                   // template += `<div class="products-item__sub"><label><input type="checkbox"> ${l4}</label>`
                   template += `
                     <div class="d-flex justify-content-between align-items-center _collapsed products-item">
-                      <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" data-child="${l2}" data-parent="${l3}" value="${id}" onchange="productCheck(this);">${l4}</label>
+                      <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" data-child="${l4}" data-parent="${l3}" value="${id}" onchange="productCheck(this);">${l4}</label>
                       <div data-bs-toggle="collapse" data-bs-target="#l4-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
                         <img src="./public/images/icons/angle.svg" alt="Данные">
                       </div>
                     </div>
-                    <div id="l4-collapse-${id}" data-l3-title="${l4}" class="products-item__category  collapse show">
+                    <div id="l4-collapse-${id}" data-category="${l4}" class="products-item__category  collapse show">
                   `;
                   for (const l5 in PRODUCTS[l2][l3][l4]){
                     id = l5.split(' ')[0];
@@ -103,13 +103,13 @@ window.producstDraw = function(){
 
 window.productCheck = function(elem){
   // const product = elem.closest('.products-item');
-  const category = document.querySelector('.products-item__category');
-  if (category){
-    console.log(category);
-    
-    // console.log(document.querySelector(`[data-l2-title="#${category.id}"]`))
-    category.indeterminate = true;
-    // check.indeterminate = true
+  const child = elem.dataset.child;
+  if (child){
+    document.querySelector(`[data-category="${child}"]`).querySelectorAll('.form-check-input').forEach( (el) => el.checked = elem.checked )
+  }
+  const parent = elem.dataset.parent;
+  if (parent) {
+    document.querySelector(`[data-child="${parent}"]`).indeterminate = elem.checked;
   }
 }
 
