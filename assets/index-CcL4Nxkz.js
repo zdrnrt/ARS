@@ -28,7 +28,7 @@ License: MIT
             <div class="d-flex justify-content-between align-items-center _collapsed products-item">
               <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${t}" data-child="${t}" onchange="productCheck(this);">${t}</label>
               <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${e}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                <img src="./public/images/icons/angle.svg" alt="Данные">
+                <img src="./images/icons/angle.svg" alt="Данные">
               </div>
             </div>
             <div id="l3-collapse-${e}" data-category="${t}" data-l3-title="${t}" class="products-item__category collapse show">
@@ -36,7 +36,7 @@ License: MIT
                 <div class="d-flex justify-content-between align-items-center _collapsed products-item">
                   <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${n}" data-child="${n}" data-parent="${t}" onchange="productCheck(this);">${n}</label>
                   <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${e}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                    <img src="./public/images/icons/angle.svg" alt="Данные">
+                    <img src="./images/icons/angle.svg" alt="Данные">
                   </div>
                 </div>
                 <div id="l3-collapse-${e}" data-category="${n}" data-l3-title="${n}" class="products-item__category collapse show">
@@ -44,7 +44,7 @@ License: MIT
                     <div class="d-flex justify-content-between align-items-center _collapsed products-item">
                       <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" data-child="${s}" data-parent="${n}" value="${e}" onchange="productCheck(this);">${s}</label>
                       <div data-bs-toggle="collapse" data-bs-target="#l4-collapse-${e}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                        <img src="./public/images/icons/angle.svg" alt="Данные">
+                        <img src="./images/icons/angle.svg" alt="Данные">
                       </div>
                     </div>
                     <div id="l4-collapse-${e}" data-category="${s}" class="products-item__category  collapse show">
