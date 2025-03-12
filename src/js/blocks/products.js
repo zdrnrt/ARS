@@ -6,7 +6,7 @@ window.producstDraw = function(){
 <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center collapsed" _onclick="tabChange(this);" data-bs-toggle="collapse" data-bs-target="#nav-collapse" aria-expanded="true" aria-controls="nav-collapse">
   <img src="./public/images/icons/settings.svg" alt="Данные" class="nav-item__icon">
   <div class="nav-item__title">Карта процессов</div>
-  <img src="./public/images/icons/angle.svg" alt="Данные" class="nav-item__angle">
+  <img src="./images/icons/angle.svg" alt="Данные" class="nav-item__angle">
 </button>
 <div id="nav-collapse" class="collapse aside-nav__item aside-nav__item--collapse" data-bs-parent="nav">
   <button class="aside-nav__item nav-item d-flex justify-content-start align-items-center" onclick="tabChange(this);">
@@ -24,7 +24,7 @@ window.producstDraw = function(){
       <div class="d-flex justify-content-between align-items-center _collapsed products-item">
         <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${el}">${el}</label>
         <div data-bs-toggle="collapse" data-bs-target="#l2-collapse-${i}" aria-expanded="true" aria-controls="nav-collapse">
-          <img src="./public/images/icons/angle.svg" alt="Данные" class="products-item__arrow">
+          <img src="./images/icons/angle.svg" alt="Данные" class="products-item__arrow">
         </div>
       </div>
       <div id="l2-collapse-${i}" data-l2-title="${el}">${el}</div>
@@ -36,7 +36,7 @@ window.producstDraw = function(){
       <div class="d-flex justify-content-between align-items-center _collapsed products-item">
         <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${el}">${el}</label>
         <div data-bs-toggle="collapse" data-bs-target="#l2-collapse-${i}" aria-expanded="true" aria-controls="nav-collapse">
-          <img src="./public/images/icons/angle.svg" alt="Данные" class="products-item__arrow">
+          <img src="./images/icons/angle.svg" alt="Данные" class="products-item__arrow">
         </div>
       </div>
       <div id="l2-collapse-${i}" data-l2-title="${el}">${el}</div>
@@ -52,7 +52,7 @@ window.producstDraw = function(){
             <div class="d-flex justify-content-between align-items-center _collapsed products-item">
               <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l2}" data-child="${l2}" onchange="productCheck(this);">${l2}</label>
               <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                <img src="./public/images/icons/angle.svg" alt="Данные">
+                <img src="./images/icons/angle.svg" alt="Данные">
               </div>
             </div>
             <div id="l3-collapse-${id}" data-category="${l2}" data-l3-title="${l2}" class="products-item__category collapse show">
@@ -63,7 +63,7 @@ window.producstDraw = function(){
                 <div class="d-flex justify-content-between align-items-center _collapsed products-item">
                   <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" value="${l3}" data-child="${l3}" data-parent="${l2}" onchange="productCheck(this);">${l3}</label>
                   <div data-bs-toggle="collapse" data-bs-target="#l3-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                    <img src="./public/images/icons/angle.svg" alt="Данные">
+                    <img src="./images/icons/angle.svg" alt="Данные">
                   </div>
                 </div>
                 <div id="l3-collapse-${id}" data-category="${l3}" data-l3-title="${l3}" class="products-item__category collapse show">
@@ -76,7 +76,7 @@ window.producstDraw = function(){
                     <div class="d-flex justify-content-between align-items-center _collapsed products-item">
                       <label class="form-check-label products-item__label"><input class="form-check-input me-2" type="checkbox" name="warehouse" data-child="${l4}" data-parent="${l3}" value="${id}" onchange="productCheck(this);">${l4}</label>
                       <div data-bs-toggle="collapse" data-bs-target="#l4-collapse-${id}" aria-expanded="true" aria-controls="nav-collapse" class="flex-shrink-0 products-item__arrow">
-                        <img src="./public/images/icons/angle.svg" alt="Данные">
+                        <img src="./images/icons/angle.svg" alt="Данные">
                       </div>
                     </div>
                     <div id="l4-collapse-${id}" data-category="${l4}" class="products-item__category  collapse show">
