@@ -22,7 +22,6 @@ ul, ol,li {
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 table {
@@ -41,16 +40,12 @@ button{
     cursor: pointer;
 }
 
-
- // базовый сброс настроекКОНЕЦ
+ // базовый сброс настроек КОНЕЦ
  
 :root{
     font-size: 10px;
-    line-height: 1.2;
 }
 body {
-    font-family: $main-font;
-    font-size: 1.2rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -66,56 +61,6 @@ body {
 .danger{
     color: var(--bs-danger);
 }
-/*
- // базовый сброс настроекКОНЕЦ
-
-#check-mark_button{ /*галочка для всех кнопок*
-    display: none;
-    color: green;
-    font-size: 15px;
-    margin-left: 5px;
- }
-
-//  button{
-//     transition: background-color 0.3s, transform 0.1s;
-//     &:hover{
-//         background-color:$hover-button;
-//         transform: scale(1.05);
-//     }
-//     &:focus {
-//         outline: none;
-//         background-color: $focus-button;
-//     }
-//     &:active{
-//         // background-color: red;
-//         transform: scale(0.95);
-//         // box-shadow: 0 0 5px  rgb(167, 67, 167);
-//     }
-// }
-
-.styled-button {
-    background-color:$buttonColor; /* Основной цвет кнопки *
-    color: white; /* Цвет текста *
-    border: none; /* Убираем рамку *
-    border-radius: 5px; /* Скругление углов *
-    //padding: 15px 30px; /* Внутренние отступы *
-    font-size: 14px; /* Размер шрифта *
-    cursor: pointer; /* Курсор при наведении *
-    transition: background-color 0.3s, transform 0.1s; /* Плавные переходы 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень *
+.border-r{
+    border-radius: $border-radius;
 }
-
-.styled-button:hover {
-    background-color: #0056b3; /* Цвет кнопки при наведении *
-}
-
-.styled-button:active {
-    background-color: #004085; /* Цвет кнопки при нажатии *
-    transform: scale(0.95); /* Уменьшение размера кнопки при нажатии *
-}
-
-.styled-button:focus {
-    outline: none; /* Убираем обводку при фокусе *
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Тень при фокусе *
-}
-*/
