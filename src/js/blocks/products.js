@@ -44,9 +44,10 @@ window.producstDraw = function(){
   });
 */
   let template = '<div>'
-
+  const select = document.getElementById('productsFilter');
   if (PRODUCTS){
       for (const l2 in PRODUCTS){
+        select.insertAdjacentHTML('beforeend', `<option value="${id}">${l2}</option>`)
           let id = l2.split(' ')[0];
           template += `
             <div class="d-flex justify-content-between align-items-center _collapsed products-item">
@@ -111,6 +112,12 @@ window.productCheck = function(elem){
   if (parent) {
     document.querySelector(`[data-child="${parent}"]`).indeterminate = elem.checked;
   }
+}
+
+window.productsFilter = function(elem){
+  const content = document.getElementById('productsContent');
+  const list = content.querySelectorAll('')
+
 }
 
 window.productToggle = function(elem){

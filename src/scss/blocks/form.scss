@@ -1,15 +1,15 @@
 .form{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .form-select{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   &:focus{
     border-color: $cl-purple-light;
     box-shadow: 0 0 0 .25rem rgba($cl-purple-light,.25);
   }
 }
 .form-control{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   &:focus{
     border-color: $cl-purple-light;
     box-shadow: 0 0 0 .25rem rgba($cl-purple-light,.25);

@@ -1,6 +1,6 @@
 import $ from "jquery";
 import Papa from 'papaparse';
-import 'bootstrap/js/index.esm.js';
+import * as Bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../scss/style.scss';
 

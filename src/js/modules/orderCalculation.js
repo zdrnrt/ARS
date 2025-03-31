@@ -11,7 +11,7 @@ window.orderCalculationOpen = function() {
             document.getElementById('content').innerHTML = html;
             // TODO отрисовки в глобавльные функции
             producstDraw();
-            // stockWarehouseDraw();
+            stockWarehouseDraw();
             // stockProducstDraw();
             loadingToggle();
         })

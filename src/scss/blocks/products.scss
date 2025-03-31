@@ -2,6 +2,9 @@
   &__sub{
     padding-left: 1rem;
   }
+  &__label{
+    white-space: nowrap;
+  }
   &__label,
   &__angle{
     cursor: pointer;

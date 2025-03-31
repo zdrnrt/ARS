@@ -1,4 +1,5 @@
 import { Chart } from 'chart.js/auto'
+import { Modal } from 'bootstrap';
 
 window.stockOpen = function() {
     loadingToggle();
@@ -25,6 +26,28 @@ window.stockOpen = function() {
 }
 
 /// сохранение настроек
+window.stockParametersSelect = function(event){
+    event.preventDefault();
+    const form = event.target;
+
+    const filterList = document.getElementById('parametersContent');
+
+    for (const control of form.querySelectorAll('input')){
+        const el = filterList.querySelector(`[name="${control.name}"]`);
+        el.disabled = true;
+        el.closest('.form-group').classList.remove('d-block');
+        if (control.checked){
+            el.disabled = false;
+            el.closest('.form-group').classList.add('d-block')
+        }
+        // control.classList.remove()
+        // console.log(control)
+        // console.log(control.checked)
+        // console.log(control.name)
+    }
+    Modal.getInstance(document.getElementById('stockModalParameters')).hide()
+
+}
 window.stockParametersSubmit = function(event){
     event.preventDefault();
     const form = event.target;
@@ -43,7 +66,7 @@ window.stockParametersSubmit = function(event){
         }
     }
     stockparameterDraw(result);
-    form.reset();
+    // form.reset();
 
     // modal.hide();
     // stockModalParametersClose();
@@ -65,7 +88,7 @@ window.stockWarehouseDraw = function(){
     let template = '<div>'
     if (WAREHOUSE){
         WAREHOUSE.forEach(el => {
-            template += `<div class="mb-1"><label class="form-check-label"><input class="form-check-input" type="checkbox" name="warehouse" value="${el.id}"> ${el.title}</label></div>`
+            template += `<div class="warehouse-item mb-1"><label class="form-check-label"><input class="form-check-input" type="checkbox" name="warehouse" value="${el.id}"> ${el.title}</label></div>`
         });
     } else {
         template += 'Ничего не найдено'
